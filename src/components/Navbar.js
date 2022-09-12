@@ -11,13 +11,13 @@ function Navbar(){
 
     const handleClick=()=>setClick(!click);
     const closeMobileMenu=()=> setClick(false);
-
+    const [isEdit, setIsEdit] = useState(true);
    
     return(
         
             <>
               <nav className='navbar'>
-                <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                <Link to='' className='navbar-logo' onClick={closeMobileMenu}>
                   EPIC
                   <i class='fab fa-firstdraft' />
                 </Link>
@@ -26,7 +26,7 @@ function Navbar(){
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                   <li className='nav-item'>
-                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                    <Link to='/home'  className='nav-links' onClick={closeMobileMenu}  >
                       Home
                     </Link>
                   </li>
@@ -72,10 +72,12 @@ function Navbar(){
                   </li>
                   <li>
                     <Link
-                      to='/sign-up'
+                      to='/'
                       className='nav-links-mobile'
-                      onClick={closeMobileMenu}
-                    >
+                      onClick={closeMobileMenu}>
+                        
+                        <button       
+                           >dAdd To List</button>           
                       Sign Up
                     </Link>
                   </li>

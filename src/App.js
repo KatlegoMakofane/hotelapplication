@@ -8,34 +8,50 @@ import Booking from './components/pages/Booking';
 import ContactUs from './components/pages/ContactUs';
 import SignUp from './components/pages/SignUp';
 import Marketing from './components/pages/Marketing';
+import Welcome from './components/Welcome'
+import Homepage from './components/Homepage'
 
 import Profile from './components/pages/Profile';
 
 function App() {
   return (
+    <div>
+  
+    <BrowserRouter>
+   
+    
+     <Routes>
+    
+   
+          <Route path="/" exact element={<Welcome/>} />
+          
+  
+          
     
     
-    
-  <BrowserRouter>
-   <Navbar/>
-    
-   <Routes>
-        <Route path="/" exact element={<Home/>} />
-        </Routes>
-        <Routes><Route path="/about" element={<About/>} /></Routes>
-        
-        <Routes> <Route path="/booking" element={<Booking/>} /></Routes>
+          </Routes> 
+          <Routes>
+            
+          <Route path="/homepage" exact element={<Homepage/>} /> 
+          
+           
+          </Routes>
+      
+          { <Routes><Route path="/about" element={<About/>} /></Routes> }
+          <Routes><Route path="/home" element={<Home/>} /></Routes>
+          <Routes> <Route path="/booking" element={<Booking/>} /></Routes>
+         
+          <Routes>   <Route path="/contact-us" element={<ContactUs/>} /></Routes>
        
-        <Routes>   <Route path="/contact-us" element={<ContactUs/>} /></Routes>
-     
-        <Routes><Route path="/sign-up" element={<SignUp/>} /></Routes>
-        
-        <Routes><Route path="/marketing" element={<Marketing/>} /></Routes>
-        
-        <Routes><Route path="/profile" element={<Profile/>} /></Routes>
-        
-        </BrowserRouter>
- 
+          <Routes><Route path="/sign-up" element={<SignUp/>} /></Routes>
+          
+          <Routes><Route path="/marketing" element={<Marketing/>} /></Routes>
+          
+          <Routes><Route path="/profile" element={<Profile/>} /></Routes>
+          
+          </BrowserRouter>
+   </div>
+    
   );
 }
 
