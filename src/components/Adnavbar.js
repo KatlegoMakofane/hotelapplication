@@ -1,10 +1,10 @@
+
 import React ,{useState}from 'react'
 import {Button} from './Button'
 import {Link} from 'react-router-dom'
-import './Navbar.css'
+import './Adnavbar.css'
 
-
-function Navbar(){
+function Adnavbar() {
     const [click,setClick]=useState(false)
 
 
@@ -19,15 +19,15 @@ function Navbar(){
               <nav className='navbar'>
                 <Link to='' className='navbar-logo' onClick={closeMobileMenu}>
                   EPIC
-                  <i class='fab fa-firstdraft' />
+                  <i className='fab fa-firstdraft' />
                 </Link>
                 <div className='menu-icon' onClick={handleClick}>
                   <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                   <li className='nav-item'>
-                    <Link to='/home'  className='nav-links' onClick={closeMobileMenu}  >
-                      Home
+                    <Link to='/AdBookings'  className='nav-links' onClick={closeMobileMenu}  >
+                      Booking
                     </Link>
                   </li>
                   <li
@@ -35,49 +35,31 @@ function Navbar(){
                    
                   >
                     <Link
-                      to='/about'
+                      to='/AdUsers'
                       className='nav-links'
                       onClick={closeMobileMenu}
                     >
-                      About 
+                      Users
                     </Link>
                    
                   </li>
                   <li className='nav-item'>
                     <Link
-                      to='/contact-us'
+                      to='/AdRooms'
                       className='nav-links'
                       onClick={closeMobileMenu}
                     >
-                      Contact Us
+                      Rooms
                     </Link>
                   </li>
-                  <li className='nav-item'>
-                    <Link
-                      to='/booking'
-                      className='nav-links'
-                      onClick={closeMobileMenu}
-                    >
-                      Booking
-                    </Link>
-                  </li>
-                  <li className='nav-item'>
-                    <Link
-                      to='/profile'
-                      className='nav-links'
-                      onClick={closeMobileMenu}
-                    >
-                     Profile
-                    </Link>
-                  </li>
+                 
                   <li>
                     <Link
                       to='/'
                       className='nav-links-mobile'
                       onClick={closeMobileMenu}>
                         
-                        <button       
-                           >Sign Up</button>           
+                        <button >Sign Up</button>           
                       Sign Up
                     </Link>
                   </li>
@@ -87,6 +69,5 @@ function Navbar(){
             </>
           );
         }
-        
-       
-export default Navbar;
+
+export default Adnavbar

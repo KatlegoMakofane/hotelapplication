@@ -21,12 +21,12 @@ export function Button() {
   return (
     <Link to='/' onClick={handleSignOut}>
       {isEdit ?  (<span  className="add-confirm-icon" onClick={handleSignOut}>sign</span>  ) : 
-                        (<button        o
-                           >Add To List </button>
+                        (<button        
+                           >Sign-out</button>
                                    )}
                                    
     </Link>
     
   );
-  setIsEdit(handleSignOut())
+  setIsEdit(handleSignOut(true))
 }
