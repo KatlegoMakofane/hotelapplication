@@ -4,7 +4,7 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import "./Admin.css";
 

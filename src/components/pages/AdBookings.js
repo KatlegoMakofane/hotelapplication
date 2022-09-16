@@ -1,5 +1,5 @@
 import React from 'react'
-import { auth } from "../../firebase.js";
+import { auth } from "../../firebaseConfig.js";
 import  { useEffect, useState } from "react";
 import Adnavbar from '../Adnavbar'
 import { useNavigate } from "react-router-dom";

@@ -1,6 +1,6 @@
 import React from 'react';
 import './ContactUs.css';
-import { auth } from "../../firebase.js";
+import { auth } from "../../firebaseConfig.js";
 import { useNavigate  } from "react-router-dom";
 import  { useEffect, useState } from "react";
 import Navbar from '../Navbar';

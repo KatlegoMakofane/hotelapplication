@@ -1,6 +1,6 @@
 import React ,{useState}from 'react'
 import './Button.css';
-import { auth } from "../firebase.js";
+import { auth } from "../firebaseConfig.js";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { signOut} from "firebase/auth";

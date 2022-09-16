@@ -1,14 +1,16 @@
 
 import Adnavbar from '../Adnavbar'
-import app, { auth } from "../../firebase.js";
+import app, { auth } from "../../firebaseConfig.js";
 import  { useEffect, useState } from "react";
 import {useNavigate} from "react-router-dom"
 import { useParams} from "react-router-dom";
 import { signOut, onAuthStateChanged, getAuth } from "firebase/auth";
-import db from "../../firebase.js";
+import db from "../../firebaseConfig.js";
 import "./AdRooms.css"
-import {toast} from "react-toastify"
+
 import { getDatabase, push, ref,set } from 'firebase/database';
+
+
 
 
 
@@ -26,39 +28,43 @@ const initialState ={
    const[data,setData] =useState({});
 
    const{name,email,contact} =state;
-  
+   const{id} =useParams();
 
+ 
 console.log("this",db)
    const handleInputChange =(e) =>{
     const {name,value}=e.target;
     setState({...state,[name]:value});
    };
 
+
    function handleSumbit(e){
     e.preventDefault();
     const db=getDatabase(app);
-    const reference=ref(db,"Rooms/"+"user");
-    // if(!name||!email || !contact){
-    //    toast.error("Please provide value in each input field")
-    // }else{
+    const reference=ref(db,"Rooms/" +"user");
+    if(!name||!email || !contact){
+      alert("Please provide value in each input field")
+    }else{
      push(reference,{
       name:name,
       email:email,
       contact:contact
-
+      
      }).then(res=>console.log(res))
      .catch(err=>console.log(err))
-    
-    
+     
+     alert("Room successfully Added")
    };
-
+  
+  }
+  
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
           if (user) {
             // read
            
           } else if (!user) {
-            Navigate("/");
+            // Navigate("/");
           }
         });
       }, );
@@ -88,7 +94,7 @@ console.log("this",db)
                  id="name"
                  name='name'
                  placeholder='Your Name...'
-                 value={name}
+                 value={name }
                  onChange={handleInputChange}
               />
               <label >Email</label>
@@ -97,7 +103,7 @@ console.log("this",db)
                  id="email"
                  name='email'
                  placeholder='Your Email...'
-                 value={email}
+                 value={email }
                  onChange={handleInputChange}
               />
               <label >Contact</label>
@@ -106,7 +112,7 @@ console.log("this",db)
                  id="contact"
                  name='contact'
                  placeholder='Your Contact No...'
-                 value={contact}
+                 value={contact }
                  onChange={handleInputChange}
               />
 

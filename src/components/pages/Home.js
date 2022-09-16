@@ -2,7 +2,7 @@ import React from 'react';
 import Swipers from '../swiper';
 import './Home.css';
 import Hotelinfo from '../Hotelinfo';
-import { auth } from "../../firebase.js";
+import { auth } from "../../firebaseConfig.js";
 import { useNavigate } from "react-router-dom";
 import  { useEffect, useState } from "react";
 import Navbar from '../Navbar';
@@ -11,6 +11,7 @@ import { signOut, onAuthStateChanged } from "firebase/auth";
 
 
 export default function Home() {
+  
   const Navigate = useNavigate();
   useEffect(() => {
     auth.onAuthStateChanged((user) => {

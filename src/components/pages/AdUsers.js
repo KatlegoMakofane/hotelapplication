@@ -1,9 +1,10 @@
 import React from 'react'
 import Adnavbar from '../Adnavbar'
-import { auth } from "../../firebase.js";
+import { auth } from "../../firebaseConfig.js";
 import  { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signOut, onAuthStateChanged } from "firebase/auth";
+
 function AdUsers() {
     const Navigate = useNavigate();
     useEffect(() => {
